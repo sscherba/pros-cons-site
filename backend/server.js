@@ -29,19 +29,20 @@ function parseConfig(configText) {
 app.post("/api/chat", async (req, res) => {
     const userMessage = req.body.message;
 
-    // Define your config prompts here or pull from a file
+    // Example static prompts from config
     const prompts = [
         { user: "Hello", bot: "Hi! How can I help you today?" },
         { user: "Who are you?", bot: "I am Nikki, a chatbot designed to practice DBT skills." }
     ];
 
+    // Match predefined prompt
     const matchedPrompt = prompts.find(p => p.user.toLowerCase() === userMessage.toLowerCase());
 
     if (matchedPrompt) {
         return res.json({ reply: matchedPrompt.bot });
     }
 
-    // If no predefined prompt matches, query OpenAI API
+    // If no predefined match, query OpenAI API
     try {
         const response = await fetch("https://api.openai.com/v1/chat/completions", {
             method: "POST",
@@ -66,4 +67,5 @@ app.post("/api/chat", async (req, res) => {
     }
 });
 
+// Start the server
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
