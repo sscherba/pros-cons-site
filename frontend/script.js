@@ -25,7 +25,7 @@ async function handleInput(event) {
 
     try {
         // Send user message to the backend
-        const response = await fetch("pros-cons-site-34z0qy2ig-samanthas-projects-7267dbb8.vercel.app", {
+        const response = await fetch("pros-cons-site-fl1ye646q-samanthas-projects-7267dbb8.vercel.app", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
