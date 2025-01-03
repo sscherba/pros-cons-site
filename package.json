@@ -1,0 +1,17 @@
+{
+  "name": "chatbot-project",
+  "version": "1.0.0",
+  "description": "A chatbot using OpenAI API",
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "node-fetch": "^2.6.7"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Your Name",
+  "license": "MIT"
+}
